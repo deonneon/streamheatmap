@@ -1,21 +1,11 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  box-sizing: border-box;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +14,24 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.heatmap{
+  width:100%;
+  height:100%;
+  width:2000px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.react-calendar-heatmap rect{
+  border-radius: 5px !important;
+  rx: 3px;
+  ry: 3px;
+}
+
+.react-calendar-heatmap text {
+  font-size: 6px !important;
+  fill: #aaa !important;
+}
+
+.react-calendar-heatmap .color-github-5 {
+  fill: #056a2d;
 }
