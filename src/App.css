@@ -14,14 +14,13 @@
   color: white;
 }
 
-
-.heatmap{
-  width:100%;
-  height:100%;
-  width:800px;
+.heatmap {
+  width: 100%;
+  height: 100%;
+  width: 800px;
 }
 
-.react-calendar-heatmap rect{
+.react-calendar-heatmap rect {
   border-radius: 5px !important;
   rx: 3px;
   ry: 3px;
@@ -36,6 +35,6 @@
   fill: #056a2d;
 }
 
-body{
+body {
   background-color: #282c34;
 }
