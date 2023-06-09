@@ -18,7 +18,7 @@
 .heatmap{
   width:100%;
   height:100%;
-  width:2000px;
+  width:800px;
 }
 
 .react-calendar-heatmap rect{
@@ -34,4 +34,8 @@
 
 .react-calendar-heatmap .color-github-5 {
   fill: #056a2d;
+}
+
+body{
+  background-color: #282c34;
 }

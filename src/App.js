@@ -22,9 +22,9 @@ function App() {
 
     const [videoData, setVideoData] = useState([]);
 
-    const apiKey = 'AIzaSyDMlH8aZ7yD5A20CzPPpeTxt905Tbl9lnk';
+    const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY
   
-    const channelId = 'UCHducYUNB9j5osiORgA2IzQ';
+    const channelId = process.env.REACT_APP_CHANNEL_ID
   
     const videoDataForHeatmap = Object.keys(videoData).map(date => ({
       date,
@@ -92,7 +92,7 @@ function App() {
       </header>
       <div className="heatmap">
         <CalendarHeatmap
-          startDate={new Date((new Date()).setMonth((new Date()).getMonth()-22))}
+          startDate={new Date((new Date()).setMonth((new Date()).getMonth()-1))}
           endDate={new Date()}
           values={videoDataForHeatmap}
           classForValue={(value) => {
