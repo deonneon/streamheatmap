@@ -25,4 +25,4 @@ To start the app local server
 
 
 
-![Heatmap Example](https://github.com/deonneon/streamheatmap/example_heatmap.png)
+![Heatmap Example](example_heatmap.png)
