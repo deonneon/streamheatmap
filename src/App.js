@@ -50,6 +50,9 @@ function App() {
         )}&key=${apiKey}&part=contentDetails,snippet`
       );
 
+      //Only use data from after a certain date. 
+      const startDate = '2023-01-01';
+
       const data = detailsResponse.data.items.map((item) => {
         const durationInMinutes = convertISO8601ToMinutes(
           item.contentDetails.duration
@@ -57,10 +60,10 @@ function App() {
         const uploadDate = new Date(item.snippet.publishedAt)
           .toISOString()
           .split("T")[0];
-
+      
         // round the count value here
         return { date: uploadDate, count: durationInMinutes / 120 };
-      });
+      }).filter(item => item.date >= startDate);
 
       const groupedData = data.reduce((acc, video) => {
         if (!acc[video.date]) {
@@ -80,12 +83,20 @@ function App() {
     fetchVideos();
   }, [apiKey, channelId]);
 
+  // find the earliest date in your dataset
+  let earliestDate = Object.keys(videoData)[0];
+  for (let date in videoData) {
+    if (date < earliestDate) {
+      earliestDate = date;
+    }
+  }
+
   return (
     <div className="App">
       <header className="App-header"></header>
       <div className="heatmap">
         <CalendarHeatmap
-          startDate={new Date(new Date().setMonth(new Date().getMonth() - 1))}
+          startDate={new Date(earliestDate)}
           endDate={new Date()}
           values={videoDataForHeatmap}
           classForValue={(value) => {
