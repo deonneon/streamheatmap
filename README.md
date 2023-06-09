@@ -25,4 +25,4 @@ To start the app local server
 
 
 
-![Screenshot 2023-06-09 at 5 20 19 PM](https://github.com/deonneon/streamheatmap/assets/13922212/2469d0ba-8eeb-49b1-8456-379860c0428f)
+![Heatmap Example](https://github.com/deonneon/streamheatmap/example_heatmap.png)
